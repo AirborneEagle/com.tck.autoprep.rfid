@@ -4,26 +4,22 @@ package autoprep.db;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 import autoprep.api.BaseRecord;
 
 @Entity
 public class TKC_Container extends BaseRecord
 {
-    
-	private String name;
+  @OneToOne
+	private TKC_ContainerType type;
 	
 	private List<TKC_Container> subContainer;
 	
+	@OneToOne
+	private TKC_Unit unit;
 	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	
     /**
      * @return the subContainer
      */
